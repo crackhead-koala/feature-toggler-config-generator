@@ -1,64 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../static/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../static/css/main.css"/>
+    <link rel="stylesheet" href="../static/css/main.css">
 
     <title>Feature Toggler Config Editor</title>
 </head>
-<body class="bg-light">
+<body class="bg-light mt-5">
 
-    <form action="" style="width: 500px; margin: auto;">
+    <h1>Create Feature Toggler Config</h1>
+
+    <form action="">
         <div class="container">
 
-            <div class="form-group">
-                <label for="feature" class="from-label">Feature name</label>
-                <input type="text" id="feature" class="form-control"/>
-            </div>
+            <h2>General Options</h2>
 
-            <div class="form-check">
-                <label for="enabled" class="form-check-label">Enabled</label>
-                <input type="checkbox" id="enabled" class="form-check-input"/>
-            </div>
-
-            <div class="form-check">
-                <label for="is_active" class="form-check-label">Is active</label>
-                <input type="checkbox" id="is_active" class="form-check-input"/>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="first_install" class="from-label">First install version</label>
-                        <input type="text" id="first_install" class="form-control"/>
-                    </div>
+            <div class="row mb-3">
+                <label class="col-4 col-from-label" for="feature">Feature name</label>
+                <div class="col-8">
+                    <input class="form-control" type="text" id="feature">
                 </div>
+            </div>
 
-                <div class="col">
-                    <div class="form-group">
-                        <label for="minimal_app_version" class="from-label">Minimal app version</label>
-                        <input type="text" id="first_install" class="form-control"/>
+            <div class="row mb-3">
+                <label class="col-4 col-form-label" for="feature-status">Feature status</label>
+                <div class="col-8" id="feature-status">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="enabled" checked>
+                        <label class="form-check-label" for="enabled">Enabled</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="is-active">
+                        <label class="form-check-label" for="is-active">Active</label>
                     </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="region" class="from-label">Region</label>
-                <select name="region" id="region" class="form-control">
-                    <option value="any">any</option>
-                    <option value="global">global</option>
-                    <option value="ru">ru</option>
-                </select>
+            <div class="row mb-3">
+                <label class="col-4 col-from-label" for="distribution-event">Distribution action</label>
+                <div class="col-8">
+                    <input class="form-control" type="text" id="distribution-event">
+                </div>
             </div>
 
-            <button type="submit" class="btn btn-outline-primary">Submit</button>
+            <div class="row mb-3">
+                <div class="col-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="use-always-active-for-ids">
+                        <label class="form-check-label" for="use-always-active-for-ids">Always active for specific user IDs</label>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Enter ID here...">
+                        <button class="btn btn-outline-secondary" type="button" id="always-active-for-ids-addon">Add</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input class="form-control mb-1" type="text" value="77405093" disabled readonly>
+                    <input class="form-control mb-1" type="text" value="77868559" disabled readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="use-first-install">
+                        <label class="from-check-label" for="use-first-install">First install version</label>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="use-minimal-app-version">
+                        <label class="form-check-label" for="use-minimal-app-version">Minimal app version</label>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="use-region">
+                        <label class="form-check-label" for="use-region">Region</label>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <select class="form-select" name="region">
+                        <option value="global">global</option>
+                        <option value="ru">ru</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="use-store">
+                        <label class="form-check-label" for="use-store">Store</label>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Enter store PI here...">
+                        <button class="btn btn-outline-secondary" type="button" id="store-addon">Add</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input class="form-control mb-1" type="text" value="com.android.vending" disabled readonly>
+                    <input class="form-control mb-1" type="text" value="com.xiaomi.mipicks" disabled readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="text" id="use-price-groups">
+                        <label class="form-check-label" for="use-price-groups">Price groups</label>
+                    </div>
+                </div>
+                <div class="col-5" id="price-groups">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Enter price group here...">
+                        <button class="btn btn-outline-secondary" type="button" id="price-groups-addon">Add</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <input class="form-control mb-1" type="text" value="1" disabled readonly>
+                    <input class="form-control mb-1" type="text" value="2" disabled readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="use-purchases-status">
+                        <label class="form-check-label" for="use-purchases-status">Purchases status</label>
+                    </div>
+                </div>
+                <div class="col-8" id="feature-status">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="subscriptions">
+                        <label class="form-check-label" for="subscriptions">Subscription</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="minutes">
+                        <label class="form-check-label" for="minutes">Minutes</label>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>Distribution Options</h2>
+
+            <hr>
+
+            <h2>Group Options</h2>
+
+            <hr>
+
+            <button class="btn btn-outline-primary" type="submit">Submit</button>
         </div>
     </form>
 
