@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.css"/>
+
+    <title>Feature Toggler Config Editor</title>
+</head>
+<body class="bg-light">
+
+    <form action="" style="width: 500px; margin: auto;">
+        <div class="container">
+
+            <div class="form-group">
+                <label for="feature" class="from-label">Feature name</label>
+                <input type="text" id="feature" class="form-control"/>
+            </div>
+
+            <div class="form-check">
+                <label for="enabled" class="form-check-label">Enabled</label>
+                <input type="checkbox" id="enabled" class="form-check-input"/>
+            </div>
+
+            <div class="form-check">
+                <label for="is_active" class="form-check-label">Is active</label>
+                <input type="checkbox" id="is_active" class="form-check-input"/>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="first_install" class="from-label">First install version</label>
+                        <input type="text" id="first_install" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="minimal_app_version" class="from-label">Minimal app version</label>
+                        <input type="text" id="first_install" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="region" class="from-label">Region</label>
+                <select name="region" id="region" class="form-control">
+                    <option value="any">any</option>
+                    <option value="global">global</option>
+                    <option value="ru">ru</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </div>
+    </form>
+
+    <!-- Bootstrap JS -->
+    <!-- <script src="../static/js/bootstrap.bundle.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,177 @@
+{
+  "android.test.feature": {
+    "feature": "android.test.feature_1",
+    "rule": "experiment.Rule",
+    "ruleOptions": {
+      "enabled": true,
+      "is_active": true,
+      "region": "ru",
+      "store": {
+        "com.android.vending": true,
+        "org.telegram.messenger": true
+      },
+      "active_subscription": true,
+      "active_minutes": true,
+      "ipc": {
+        "RU": true
+      },
+      "excluded_ipc": {
+        "GB": true,
+        "PL": true
+      },
+      "mcc": {
+        "5": true,
+        "6": true
+      },
+      "excluded_mcc": {
+        "14": true,
+        "15": true
+      },
+      "mnc": {
+        "2": true
+      },
+      "excluded_mnc": {
+        "404": true,
+        "405": true,
+        "413": true
+      },
+      "license_accept": true,
+      "first_install": "1.2.3",
+      "groups": {
+        "android_group_1": {
+          "uid_indexes": [
+            4,
+            8,
+            9
+          ],
+          "locales": {
+            "ru": true
+          },
+          "excluded_locales": {
+            "en": true
+          },
+          "device": "Android",
+          "config": {
+            "test": "test"
+          },
+          "greater_than_or_equal_to_percent": 0,
+          "less_than_or_equal_to_percent": 80
+        },
+        "ios_group_1": {
+          "uid_indexes": [
+            4,
+            8,
+            9
+          ],
+          "device": "ios",
+          "config": {
+            "test": "test"
+          },
+          "greater_than_or_equal_to_percent": 0,
+          "less_than_or_equal_to_percent": 80
+        }
+      }
+    }
+  },
+  "android.test.feature_1": {
+    "feature": "android.test.feature_1_1",
+    "rule": "experiment.Rule",
+    "ruleOptions": {
+      "enabled": true,
+      "is_active": true,
+      "license_accept": false,
+      "distribution_event": "gmd_228_task_name_feature",
+      "groups": {
+        "android_group_1": {
+          "uid_indexes": [
+            4,
+            8,
+            9
+          ],
+          "device": "android",
+          "config": {
+            "test": "test"
+          },
+          "greater_than_or_equal_to_percent": 0,
+          "less_than_or_equal_to_percent": 80
+        }
+      }
+    }
+  },
+  "android.experiment.title_in_button_on_promobanner": {
+    "feature": "android.experiment.title_in_button_on_promobanner",
+    "rule": "experiment.Rule",
+    "ruleOptions": {
+      "enabled": true,
+      "is_active": true,
+      "distribution_event": "growth_gmd_29544_banner_text_feature_toggler_experiment",
+      "division_config": {
+        "hash_type": "crc32",
+        "use_uid": true,
+        "salt": "ftoggler_test",
+        "remainder_number": 100
+      },
+      "groups": {
+        "old": {
+          "uid_indexes": [
+            4,
+            8,
+            9
+          ],
+          "device": "android",
+          "greater_than_or_equal_to_percent": 67,
+          "less_than_or_equal_to_percent": 82
+        },
+        "new": {
+          "uid_indexes": [
+            4,
+            8,
+            9
+          ],
+          "device": "android",
+          "greater_than_or_equal_to_percent": 83,
+          "less_than_or_equal_to_percent": 99
+        }
+      }
+    }
+  },
+  "android.experiment.test_2": {
+    "feature": "android.experiment.test_2",
+    "rule": "experiment.Rule",
+    "ruleOptions": {
+      "enabled": true,
+      "is_active": true,
+      "exclude_locales": {
+        "rtl1": true,
+        "rtl2": true,
+        "rtl3": true
+      },
+      "children": {
+        "ios": true
+      },
+      "minimal_app_version": 2003008,
+      "store": {
+        "com.google.android.packageinstaller": true,
+        "com.android.vending": true
+      },
+      "device" : "android",
+      "division_config": {
+        "hash_type": "crc32",
+        "use_uid": true,
+        "salt": "growth_arpu_experiments",
+        "remainder_number": 90
+      },
+      "groups": {
+        "test": {
+          "device": "android",
+          "greater_than_or_equal_to_percent": 34,
+          "less_than_or_equal_to_percent": 66
+        },
+        "control": {
+          "greater_than_or_equal_to_percent": 0,
+          "less_than_or_equal_to_percent": 33
+        }
+      }
+    }
+  }
+}
