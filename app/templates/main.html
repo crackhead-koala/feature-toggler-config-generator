@@ -57,7 +57,7 @@
               <label class="form-check-label" for="use-always-active-for-ids">Always active for specific user IDs</label>
             </div>
           </div>
-          <div class="col-5">
+          <div class="d-none col-5" id="always-active-for-ids-wrapper" >
             <textarea class="form-control" rows="2" placeholder="Enter IDs here..."></textarea>
           </div>
         </div>
@@ -69,7 +69,7 @@
               <label class="from-check-label" for="use-first-install">First install version</label>
             </div>
           </div>
-          <div class="col-5">
+          <div class="d-none col-5" id="first-install-wrapper">
             <input class="form-control" type="text">
           </div>
         </div>
@@ -81,7 +81,7 @@
               <label class="form-check-label" for="use-minimal-app-version">Minimal app version</label>
             </div>
           </div>
-          <div class="col-5">
+          <div class="d-none col-5" id="minimal-app-version-wrapper">
             <input class="form-control" type="text">
           </div>
         </div>
@@ -93,7 +93,7 @@
               <label class="form-check-label" for="use-region">Region</label>
             </div>
           </div>
-          <div class="col-5">
+          <div class="d-none col-5" id="region-wrapper">
             <select class="form-select" name="region">
               <option value="global">global</option>
               <option value="ru">ru</option>
@@ -108,7 +108,7 @@
               <label class="form-check-label" for="use-store">Store</label>
             </div>
           </div>
-          <div class="col-5">
+          <div class="d-none col-5" id="store-wrapper">
             <p>Include:</p>
             <textarea class="form-control mb-3" rows="2" placeholder="Enter store package IDs to include..."></textarea>
             <p>Exclude:</p>
@@ -119,11 +119,11 @@
         <div class="row mb-3">
           <div class="col-4">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-price-groups">
+              <input class="form-check-input" type="checkbox" id="use-price-groups">
               <label class="form-check-label" for="use-price-groups">Price groups</label>
             </div>
           </div>
-          <div class="col-5" id="price-groups">
+          <div class="d-none col-5" id="price-groups-wrapper">
             <textarea class="form-control" rows="2" placeholder="Enter price groups here..."></textarea>
           </div>
         </div>
@@ -135,7 +135,7 @@
               <label class="form-check-label" for="use-purchases-status">Purchases status</label>
             </div>
           </div>
-          <div class="col-8" id="feature-status">
+          <div class="d-none col-8" id="purchases-status-wrapper">
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" id="subscriptions">
               <label class="form-check-label" for="subscriptions">Subscription</label>
@@ -154,7 +154,7 @@
               <label class="form-check-label" for="use-license-status">License accept status</label>
             </div>
           </div>
-          <div class="col-8" id="feature-status">
+          <div class="d-none col-8" id="license-status-wrapper">
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" id="license">
               <label class="form-check-label" for="license">License accepted</label>
@@ -165,11 +165,11 @@
         <div class="row mb-3">
           <div class="col-4">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-ipc">
+              <input class="form-check-input" type="checkbox" id="use-ipc">
               <label class="form-check-label" for="use-ipc">Include IPCs</label>
             </div>
           </div>
-          <div class="col-5" id="ipc">
+          <div class="d-none col-5" id="ipc-wrapper">
             <textarea class="form-control" rows="2" placeholder="Enter IPs to include..."></textarea>
           </div>
         </div>
@@ -177,11 +177,11 @@
         <div class="row mb-3">
           <div class="col-4">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-excluded-ipc">
+              <input class="form-check-input" type="checkbox" id="use-excluded-ipc">
               <label class="form-check-label" for="use-excluded-ipc">Exclude IPCs</label>
             </div>
           </div>
-          <div class="col-5" id="excluded-ipc">
+          <div class="d-none col-5" id="excluded-ipc-wrapper">
             <textarea class="form-control" rows="2" placeholder="Enter IPCs to exclude..."></textarea>
           </div>
         </div>
@@ -189,11 +189,11 @@
         <div class="row mb-3">
           <div class="col-4">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-mcc">
+              <input class="form-check-input" type="checkbox" id="use-mcc">
               <label class="form-check-label" for="use-mcc">Include MCCs</label>
             </div>
           </div>
-          <div class="col-5" id="mcc">
+          <div class="d-none col-5" id="mcc-wrapper">
             <textarea class="form-control" rows="2" placeholder="Enter MCCs to include..."></textarea>
           </div>
         </div>
@@ -201,11 +201,11 @@
         <div class="row mb-3">
           <div class="col-4">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-excluded-mcc">
+              <input class="form-check-input" type="checkbox" id="use-excluded-mcc">
               <label class="form-check-label" for="use-excluded-mcc">Exclude MCCs</label>
             </div>
           </div>
-          <div class="col-5" id="excluded-mcc">
+          <div class="d-none col-5" id="excluded-mcc-wrapper">
             <textarea class="form-control" rows="2" placeholder="Enter MCCs to exclude..."></textarea>
           </div>
         </div>
@@ -213,11 +213,11 @@
         <div class="row mb-3">
           <div class="col-4">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-locales">
+              <input class="form-check-input" type="checkbox" id="use-locales">
               <label class="form-check-label" for="use-locales">Include locales</label>
             </div>
           </div>
-          <div class="col-5" id="locales">
+          <div class="d-none col-5" id="locales-wrapper">
             <textarea class="form-control" rows="2" placeholder="Enter locales to include..."></textarea>
           </div>
         </div>
@@ -225,11 +225,11 @@
         <div class="row mb-3">
           <div class="col-4">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-excluded-locale">
-              <label class="form-check-label" for="use-excluded-locale">Exclude locales</label>
+              <input class="form-check-input" type="checkbox" id="use-excluded-locales">
+              <label class="form-check-label" for="use-excluded-locales">Exclude locales</label>
             </div>
           </div>
-          <div class="col-5" id="excluded-locale">
+          <div class="d-none col-5" id="excluded-locales-wrapper">
             <textarea class="form-control" rows="2" placeholder="Enter locales to exclude..."></textarea>
           </div>
         </div>
@@ -249,7 +249,8 @@
     </form>
 
 		<!-- jQuery and Bootstrap JS -->
-		<!-- <script src="../static/js/jquery-3.6.1.min.js"></script>
-		<script src="../static/js/bootstrap.bundle.min.js"></script> -->
+		<script src="../static/js/jquery-3.6.1.min.js"></script>
+		<script src="../static/js/bootstrap.bundle.min.js"></script>
+		<script src="../static/js/main.js"></script>
   </body>
 </html>

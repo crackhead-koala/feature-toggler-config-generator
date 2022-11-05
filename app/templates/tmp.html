@@ -57,8 +57,8 @@
               <label class="form-check-label" for="use-always-active-for-ids">Always active for specific user IDs</label>
             </div>
           </div>
-          <div class="col-5">
-            <textarea class="form-control" rows="2" placeholder="Enter IDs here..."></textarea>
+          <div class="col-5" id="always-active-for-ids-wrapper">
+            <textarea class="form-control" rows="2" placeholder="Enter IDs here..." id="always-active-for-ids"></textarea>
           </div>
         </div>
 
@@ -101,155 +101,31 @@
           </div>
         </div>
 
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="use-store">
-              <label class="form-check-label" for="use-store">Store</label>
-            </div>
-          </div>
-          <div class="col-5">
-            <p>Include:</p>
-            <textarea class="form-control mb-3" rows="2" placeholder="Enter store package IDs to include..."></textarea>
-            <p>Exclude:</p>
-            <textarea class="form-control mb-3" rows="2" placeholder="Enter store package IDs to exclude..."></textarea>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-price-groups">
-              <label class="form-check-label" for="use-price-groups">Price groups</label>
-            </div>
-          </div>
-          <div class="col-5" id="price-groups">
-            <textarea class="form-control" rows="2" placeholder="Enter price groups here..."></textarea>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="use-purchases-status">
-              <label class="form-check-label" for="use-purchases-status">Purchases status</label>
-            </div>
-          </div>
-          <div class="col-8" id="feature-status">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="subscriptions">
-              <label class="form-check-label" for="subscriptions">Subscription</label>
-            </div>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="minutes">
-              <label class="form-check-label" for="minutes">Minutes</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="use-license-status">
-              <label class="form-check-label" for="use-license-status">License accept status</label>
-            </div>
-          </div>
-          <div class="col-8" id="feature-status">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="license">
-              <label class="form-check-label" for="license">License accepted</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-ipc">
-              <label class="form-check-label" for="use-ipc">Include IPCs</label>
-            </div>
-          </div>
-          <div class="col-5" id="ipc">
-            <textarea class="form-control" rows="2" placeholder="Enter IPs to include..."></textarea>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-excluded-ipc">
-              <label class="form-check-label" for="use-excluded-ipc">Exclude IPCs</label>
-            </div>
-          </div>
-          <div class="col-5" id="excluded-ipc">
-            <textarea class="form-control" rows="2" placeholder="Enter IPCs to exclude..."></textarea>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-mcc">
-              <label class="form-check-label" for="use-mcc">Include MCCs</label>
-            </div>
-          </div>
-          <div class="col-5" id="mcc">
-            <textarea class="form-control" rows="2" placeholder="Enter MCCs to include..."></textarea>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-excluded-mcc">
-              <label class="form-check-label" for="use-excluded-mcc">Exclude MCCs</label>
-            </div>
-          </div>
-          <div class="col-5" id="excluded-mcc">
-            <textarea class="form-control" rows="2" placeholder="Enter MCCs to exclude..."></textarea>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-locales">
-              <label class="form-check-label" for="use-locales">Include locales</label>
-            </div>
-          </div>
-          <div class="col-5" id="locales">
-            <textarea class="form-control" rows="2" placeholder="Enter locales to include..."></textarea>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="text" id="use-excluded-locale">
-              <label class="form-check-label" for="use-excluded-locale">Exclude locales</label>
-            </div>
-          </div>
-          <div class="col-5" id="excluded-locale">
-            <textarea class="form-control" rows="2" placeholder="Enter locales to exclude..."></textarea>
-          </div>
-        </div>
-
-        <hr>
-
-        <h2>Distribution Options</h2>
-
-        <hr>
-
-        <h2>Group Options</h2>
-
-        <hr>
-
         <button class="btn btn-outline-primary" type="submit">Submit</button>
       </div>
     </form>
 
+    <div class="mt-5">
+      <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Link with href
+        </a>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Button with data-target
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+    </div>
+
 		<!-- jQuery and Bootstrap JS -->
 		<script src="../static/js/jquery-3.6.1.min.js"></script>
 		<script src="../static/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts -->
+    <script src="../static/js/main.js"></script>
   </body>
 </html>
