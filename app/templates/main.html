@@ -1,316 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../static/css/main.css">
 
     <title>Feature Toggler Config Editor</title>
-</head>
-<body class="bg-light mt-5">
+  </head>
+  <body class="bg-light mt-5">
 
     <h1>Create Feature Toggler Config</h1>
 
     <form method="POST" action="">
-        <div class="container">
+      <div class="container">
 
-            <h2>General Options</h2>
+        <h2>General Options</h2>
 
-            <div class="row mb-3">
-                <label class="col-4 col-from-label" for="feature">Feature name</label>
-                <div class="col-8">
-                    <input class="form-control" type="text" id="feature">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label class="col-4 col-form-label" for="feature-status">Feature status</label>
-                <div class="col-8" id="feature-status">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="enabled" checked>
-                        <label class="form-check-label" for="enabled">Enabled</label>
-                    </div>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="is-active">
-                        <label class="form-check-label" for="is-active">Active</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label class="col-4 col-from-label" for="distribution-event">Distribution action</label>
-                <div class="col-8">
-                    <input class="form-control" type="text" id="distribution-event">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="use-always-active-for-ids">
-                        <label class="form-check-label" for="use-always-active-for-ids">Always active for specific user IDs</label>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter ID here...">
-                        <button class="btn btn-outline-secondary" type="button" id="always-active-for-ids-addon">Add</button>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <input class="form-control mb-1" type="text" value="77405093" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="77868559" disabled readonly>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="use-first-install">
-                        <label class="from-check-label" for="use-first-install">First install version</label>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="use-minimal-app-version">
-                        <label class="form-check-label" for="use-minimal-app-version">Minimal app version</label>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="use-region">
-                        <label class="form-check-label" for="use-region">Region</label>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <select class="form-select" name="region">
-                        <option value="global">global</option>
-                        <option value="ru">ru</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="use-store">
-                        <label class="form-check-label" for="use-store">Store</label>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter store PI here...">
-                        <button class="btn btn-outline-secondary" type="button" id="store-addon">Add</button>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <input class="form-control mb-1" type="text" value="com.android.vending" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="com.xiaomi.mipicks" disabled readonly>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="text" id="use-price-groups">
-                        <label class="form-check-label" for="use-price-groups">Price groups</label>
-                    </div>
-                </div>
-                <div class="col-5" id="price-groups">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter price group here...">
-                        <button class="btn btn-outline-secondary" type="button" id="price-groups-addon">Add</button>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <input class="form-control mb-1" type="text" value="1" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="2" disabled readonly>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="use-purchases-status">
-                        <label class="form-check-label" for="use-purchases-status">Purchases status</label>
-                    </div>
-                </div>
-                <div class="col-8" id="feature-status">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="subscriptions">
-                        <label class="form-check-label" for="subscriptions">Subscription</label>
-                    </div>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="minutes">
-                        <label class="form-check-label" for="minutes">Minutes</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="use-license-status">
-                        <label class="form-check-label" for="use-license-status">License accept status</label>
-                    </div>
-                </div>
-                <div class="col-8" id="feature-status">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="license">
-                        <label class="form-check-label" for="license">License accepted</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="text" id="use-ipc">
-                        <label class="form-check-label" for="use-ipc">Include IPCs</label>
-                    </div>
-                </div>
-                <div class="col-5" id="ipc">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter IPC here...">
-                        <button class="btn btn-outline-secondary" type="button" id="ipc-addon">Add</button>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <input class="form-control mb-1" type="text" value="RU" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="UZ" disabled readonly>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="text" id="use-excluded-ipc">
-                        <label class="form-check-label" for="use-excluded-ipc">Exclude IPCs</label>
-                    </div>
-                </div>
-                <div class="col-5" id="excluded-ipc">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter IPC here...">
-                        <button class="btn btn-outline-secondary" type="button" id="excluded-ipc-addon">Add</button>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <input class="form-control mb-1" type="text" value="US" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="CA" disabled readonly>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="text" id="use-mcc">
-                        <label class="form-check-label" for="use-mcc">Include MCCs</label>
-                    </div>
-                </div>
-                <div class="col-5" id="mcc">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter MCC code here...">
-                        <button class="btn btn-outline-secondary" type="button" id="mcc-addon">Add</button>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <input class="form-control mb-1" type="text" value="250" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="434" disabled readonly>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="text" id="use-excluded-mcc">
-                        <label class="form-check-label" for="use-excluded-mcc">Exclude MCCs</label>
-                    </div>
-                </div>
-                <div class="col-5" id="excluded-mcc">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter MCC code here...">
-                        <button class="btn btn-outline-secondary" type="button" id="excluded-mcc-addon">Add</button>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <input class="form-control mb-1" type="text" value="404" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="405" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="413" disabled readonly>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="text" id="use-locales">
-                        <label class="form-check-label" for="use-locales">Include locales</label>
-                    </div>
-                </div>
-                <div class="col-5" id="locales">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter locale here...">
-                        <button class="btn btn-outline-secondary" type="button" id="locales-addon">Add</button>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <input class="form-control mb-1" type="text" value="ru" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="uz" disabled readonly>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="text" id="use-excluded-locale">
-                        <label class="form-check-label" for="use-excluded-locale">Exclude locales</label>
-                    </div>
-                </div>
-                <div class="col-5" id="excluded-locale">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter locale here...">
-                        <button class="btn btn-outline-secondary" type="button" id="excluded-locale-addon">Add</button>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <input class="form-control mb-1" type="text" value="404" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="405" disabled readonly>
-                    <input class="form-control mb-1" type="text" value="413" disabled readonly>
-                </div>
-            </div>
-
-            <hr>
-
-            <h2>Distribution Options</h2>
-
-            <hr>
-
-            <h2>Group Options</h2>
-
-            <hr>
-
-            <button class="btn btn-outline-primary" type="submit">Submit</button>
+        <div class="row mb-3">
+          <label class="col-4 col-from-label" for="feature">Feature name</label>
+          <div class="col-8">
+            <input class="form-control" type="text" id="feature">
+          </div>
         </div>
+
+        <div class="row mb-3">
+          <label class="col-4 col-form-label" for="feature-status">Feature status</label>
+          <div class="col-8" id="feature-status">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="enabled">
+              <label class="form-check-label" for="enabled">Enabled</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="is-active">
+              <label class="form-check-label" for="is-active">Active</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="col-4 col-from-label" for="distribution-event">Distribution action</label>
+          <div class="col-8">
+            <input class="form-control" type="text" id="distribution-event">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="use-always-active-for-ids">
+              <label class="form-check-label" for="use-always-active-for-ids">Always active for specific user IDs</label>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Enter ID here...">
+              <button class="btn btn-outline-secondary" type="button" id="always-active-for-ids-addon">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <input class="form-control mb-1" type="text" value="77405093" disabled readonly>
+            <input class="form-control mb-1" type="text" value="77868559" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="use-first-install">
+              <label class="from-check-label" for="use-first-install">First install version</label>
+            </div>
+          </div>
+          <div class="col-5">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="use-minimal-app-version">
+              <label class="form-check-label" for="use-minimal-app-version">Minimal app version</label>
+            </div>
+          </div>
+          <div class="col-5">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="use-region">
+              <label class="form-check-label" for="use-region">Region</label>
+            </div>
+          </div>
+          <div class="col-5">
+            <select class="form-select" name="region">
+              <option value="global">global</option>
+              <option value="ru">ru</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="use-store">
+              <label class="form-check-label" for="use-store">Store</label>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Enter store
+                PI here...">
+              <button class="btn btn-outline-secondary" type="button" id="store-addon">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <input class="form-control mb-1" type="text" value="com.android.vending" disabled readonly>
+            <input class="form-control mb-1" type="text" value="com.xiaomi.mipicks" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="text" id="use-price-groups">
+              <label class="form-check-label" for="use-price-groups">Price groups</label>
+            </div>
+          </div>
+          <div class="col-5" id="price-groups">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Enter price group here...">
+              <button class="btn btn-outline-secondary" type="button" id="price-groups-addon">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <input class="form-control mb-1" type="text" value="1" disabled readonly>
+            <input class="form-control mb-1" type="text" value="2" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="use-purchases-status">
+              <label class="form-check-label" for="use-purchases-status">Purchases status</label>
+            </div>
+          </div>
+          <div class="col-8" id="feature-status">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="subscriptions">
+              <label class="form-check-label" for="subscriptions">Subscription</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="minutes">
+              <label class="form-check-label" for="minutes">Minutes</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="use-license-status">
+              <label class="form-check-label" for="use-license-status">License accept status</label>
+            </div>
+          </div>
+          <div class="col-8" id="feature-status">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="license">
+              <label class="form-check-label" for="license">License accepted</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="text" id="use-ipc">
+              <label class="form-check-label" for="use-ipc">Include IPCs</label>
+            </div>
+          </div>
+          <div class="col-5" id="ipc">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Enter IPC here...">
+              <button class="btn btn-outline-secondary" type="button" id="ipc-addon">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <input class="form-control mb-1" type="text" value="RU" disabled readonly>
+            <input class="form-control mb-1" type="text" value="UZ" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="text" id="use-excluded-ipc">
+              <label class="form-check-label" for="use-excluded-ipc">Exclude IPCs</label>
+            </div>
+          </div>
+          <div class="col-5" id="excluded-ipc">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Enter IPC here...">
+              <button class="btn btn-outline-secondary" type="button" id="excluded-ipc-addon">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <input class="form-control mb-1" type="text" value="US" disabled readonly>
+            <input class="form-control mb-1" type="text" value="CA" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="text" id="use-mcc">
+              <label class="form-check-label" for="use-mcc">Include MCCs</label>
+            </div>
+          </div>
+          <div class="col-5" id="mcc">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Enter MCC code here...">
+              <button class="btn btn-outline-secondary" type="button" id="mcc-addon">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <input class="form-control mb-1" type="text" value="250" disabled readonly>
+            <input class="form-control mb-1" type="text" value="434" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="text" id="use-excluded-mcc">
+              <label class="form-check-label" for="use-excluded-mcc">Exclude MCCs</label>
+            </div>
+          </div>
+          <div class="col-5" id="excluded-mcc">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Enter MCC code here...">
+              <button class="btn btn-outline-secondary" type="button" id="excluded-mcc-addon">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <input class="form-control mb-1" type="text" value="404" disabled readonly>
+            <input class="form-control mb-1" type="text" value="405" disabled readonly>
+            <input class="form-control mb-1" type="text" value="413" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="text" id="use-locales">
+              <label class="form-check-label" for="use-locales">Include locales</label>
+            </div>
+          </div>
+          <div class="col-5" id="locales">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Enter locale here...">
+              <button class="btn btn-outline-secondary" type="button" id="locales-addon">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <input class="form-control mb-1" type="text" value="ru" disabled readonly>
+            <input class="form-control mb-1" type="text" value="uz" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="text" id="use-excluded-locale">
+              <label class="form-check-label" for="use-excluded-locale">Exclude locales</label>
+            </div>
+          </div>
+          <div class="col-5" id="excluded-locale">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Enter locale here...">
+              <button class="btn btn-outline-secondary" type="button" id="excluded-locale-addon">Add</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <input class="form-control mb-1" type="text" value="404" disabled readonly>
+            <input class="form-control mb-1" type="text" value="405" disabled readonly>
+            <input class="form-control mb-1" type="text" value="413" disabled readonly>
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>Distribution Options</h2>
+
+        <hr>
+
+        <h2>Group Options</h2>
+
+        <hr>
+
+        <button class="btn btn-outline-primary" type="submit">Submit</button>
+      </div>
     </form>
 
-    <!-- Bootstrap JS -->
-    <!-- <script src="../static/js/bootstrap.bundle.js"></script> -->
-</body>
+		<!-- jQuery and Bootstrap JS -->
+		<!-- <script src="../static/js/jquery-3.6.1.min.js"></script>
+		<script src="../static/js/bootstrap.bundle.min.js"></script> -->
+  </body>
 </html>
