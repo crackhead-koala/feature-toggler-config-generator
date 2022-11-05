@@ -20,7 +20,7 @@
     <form method="POST" action="">
       <div class="container">
 
-        <h2>General Options</h2>
+        <h2 class="mb-3">General Options</h2>
 
         <div class="row mb-3">
           <label class="col-4 col-from-label" for="feature">Feature name</label>
@@ -58,14 +58,7 @@
             </div>
           </div>
           <div class="col-5">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Enter ID here...">
-              <button class="btn btn-outline-secondary" type="button" id="always-active-for-ids-addon">Add</button>
-            </div>
-          </div>
-          <div class="col-3">
-            <input class="form-control mb-1" type="text" value="77405093" disabled readonly>
-            <input class="form-control mb-1" type="text" value="77868559" disabled readonly>
+            <textarea class="form-control" rows="2" placeholder="Enter IDs here..."></textarea>
           </div>
         </div>
 
@@ -116,15 +109,10 @@
             </div>
           </div>
           <div class="col-5">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Enter store
-                PI here...">
-              <button class="btn btn-outline-secondary" type="button" id="store-addon">Add</button>
-            </div>
-          </div>
-          <div class="col-3">
-            <input class="form-control mb-1" type="text" value="com.android.vending" disabled readonly>
-            <input class="form-control mb-1" type="text" value="com.xiaomi.mipicks" disabled readonly>
+            <p>Include:</p>
+            <textarea class="form-control mb-3" rows="2" placeholder="Enter store package IDs to include..."></textarea>
+            <p>Exclude:</p>
+            <textarea class="form-control mb-3" rows="2" placeholder="Enter store package IDs to exclude..."></textarea>
           </div>
         </div>
 
@@ -136,14 +124,7 @@
             </div>
           </div>
           <div class="col-5" id="price-groups">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Enter price group here...">
-              <button class="btn btn-outline-secondary" type="button" id="price-groups-addon">Add</button>
-            </div>
-          </div>
-          <div class="col-3">
-            <input class="form-control mb-1" type="text" value="1" disabled readonly>
-            <input class="form-control mb-1" type="text" value="2" disabled readonly>
+            <textarea class="form-control" rows="2" placeholder="Enter price groups here..."></textarea>
           </div>
         </div>
 
@@ -189,14 +170,7 @@
             </div>
           </div>
           <div class="col-5" id="ipc">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Enter IPC here...">
-              <button class="btn btn-outline-secondary" type="button" id="ipc-addon">Add</button>
-            </div>
-          </div>
-          <div class="col-3">
-            <input class="form-control mb-1" type="text" value="RU" disabled readonly>
-            <input class="form-control mb-1" type="text" value="UZ" disabled readonly>
+            <textarea class="form-control" rows="2" placeholder="Enter IPs to include..."></textarea>
           </div>
         </div>
 
@@ -208,14 +182,7 @@
             </div>
           </div>
           <div class="col-5" id="excluded-ipc">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Enter IPC here...">
-              <button class="btn btn-outline-secondary" type="button" id="excluded-ipc-addon">Add</button>
-            </div>
-          </div>
-          <div class="col-3">
-            <input class="form-control mb-1" type="text" value="US" disabled readonly>
-            <input class="form-control mb-1" type="text" value="CA" disabled readonly>
+            <textarea class="form-control" rows="2" placeholder="Enter IPCs to exclude..."></textarea>
           </div>
         </div>
 
@@ -227,14 +194,7 @@
             </div>
           </div>
           <div class="col-5" id="mcc">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Enter MCC code here...">
-              <button class="btn btn-outline-secondary" type="button" id="mcc-addon">Add</button>
-            </div>
-          </div>
-          <div class="col-3">
-            <input class="form-control mb-1" type="text" value="250" disabled readonly>
-            <input class="form-control mb-1" type="text" value="434" disabled readonly>
+            <textarea class="form-control" rows="2" placeholder="Enter MCCs to include..."></textarea>
           </div>
         </div>
 
@@ -246,15 +206,7 @@
             </div>
           </div>
           <div class="col-5" id="excluded-mcc">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Enter MCC code here...">
-              <button class="btn btn-outline-secondary" type="button" id="excluded-mcc-addon">Add</button>
-            </div>
-          </div>
-          <div class="col-3">
-            <input class="form-control mb-1" type="text" value="404" disabled readonly>
-            <input class="form-control mb-1" type="text" value="405" disabled readonly>
-            <input class="form-control mb-1" type="text" value="413" disabled readonly>
+            <textarea class="form-control" rows="2" placeholder="Enter MCCs to exclude..."></textarea>
           </div>
         </div>
 
@@ -266,14 +218,7 @@
             </div>
           </div>
           <div class="col-5" id="locales">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Enter locale here...">
-              <button class="btn btn-outline-secondary" type="button" id="locales-addon">Add</button>
-            </div>
-          </div>
-          <div class="col-3">
-            <input class="form-control mb-1" type="text" value="ru" disabled readonly>
-            <input class="form-control mb-1" type="text" value="uz" disabled readonly>
+            <textarea class="form-control" rows="2" placeholder="Enter locales to include..."></textarea>
           </div>
         </div>
 
@@ -285,15 +230,7 @@
             </div>
           </div>
           <div class="col-5" id="excluded-locale">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Enter locale here...">
-              <button class="btn btn-outline-secondary" type="button" id="excluded-locale-addon">Add</button>
-            </div>
-          </div>
-          <div class="col-3">
-            <input class="form-control mb-1" type="text" value="404" disabled readonly>
-            <input class="form-control mb-1" type="text" value="405" disabled readonly>
-            <input class="form-control mb-1" type="text" value="413" disabled readonly>
+            <textarea class="form-control" rows="2" placeholder="Enter locales to exclude..."></textarea>
           </div>
         </div>
 
