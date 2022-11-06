@@ -1,5 +1,11 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField, SelectField, IntegerField
+from wtforms import (
+    StringField,
+    TextAreaField,
+    BooleanField,
+    SelectField,
+    IntegerField
+)
 from wtforms.validators import DataRequired, NumberRange
 
 
@@ -14,7 +20,7 @@ class ConfigForm(FlaskForm):
 
     use_always_enabled_for_ids = \
         BooleanField('Always active for specific user IDs')
-    always_enabled_for_ids = StringField(description='Ender ID here...')
+    always_enabled_for_ids = TextAreaField()
 
     use_first_install = BooleanField('First install version')
     first_install = StringField()
@@ -23,41 +29,46 @@ class ConfigForm(FlaskForm):
     minimal_app_version = StringField()
 
     use_region = BooleanField('Region')
-    region = SelectField(choices=[('global', 'FMK Global'), ('ru', 'GMD Ru')])
+    region = SelectField(choices=[('global', 'FMK (global)'), ('ru', 'ГМД (ру)')])
 
     use_store = BooleanField('Store')
-    store = StringField(description='Enter store PI here...')
+    included_stores = TextAreaField()
+    excluded_stores = TextAreaField()
 
-    use_price_group = BooleanField('Price groups')
-    price_group = StringField(description='Enter price group here...')
+    use_price_groups = BooleanField('Price groups')
+    price_groups = TextAreaField()
 
     use_purchases_status = BooleanField('Purchases status')
     active_subscription = BooleanField('Subscription')
     active_minutes = BooleanField('Minutes')
 
-    use_license_accept = BooleanField('License accept status')
-    license_accept = BooleanField('Licence accepded')
+    use_license_status = BooleanField('License accept status')
+    license_status = BooleanField('Licence accepded')
 
-    use_ipc = BooleanField()
-    ipc = StringField(description='Enter IPC here...')
+    use_ipc = BooleanField('Include IPCs')
+    ipc = TextAreaField()
 
-    use_excluded_ipc = BooleanField()
-    excluded_ipc = StringField(description='Enter IPC here...')
+    use_excluded_ipc = BooleanField('Exclude IPCs')
+    excluded_ipc = TextAreaField()
 
-    use_mcc = BooleanField()
-    mcc = StringField(description='Enter MCC code here...')
+    use_mcc = BooleanField('Include MCCs')
+    mcc = TextAreaField()
 
-    use_excluded_mcc = BooleanField()
-    excluded_mcc = StringField(description='Enter MCC code here...')
+    use_excluded_mcc = BooleanField('Exclude MCCs')
+    excluded_mcc = TextAreaField()
 
-    use_locales = BooleanField()
-    locales = StringField(description='Enter locale here...')
+    use_locales = BooleanField('Include locales')
+    locales = TextAreaField()
 
-    use_excluded_locales = BooleanField()
-    excluded_locales = StringField(description='Enter locale here...')
+    use_excluded_locales = BooleanField('Exclude locales')
+    excluded_locales = TextAreaField()
 
     # distribution config fields
-    hash_type = SelectField('Hash type', choices=[('crc32', 'crc32')], validators=[DataRequired()])
+    hash_type = SelectField(
+        'Hash type',
+        choices=[('crc32', 'CRC-32')],
+        validators=[DataRequired()]
+    )
     use_uid = BooleanField('Use uid')
     salt = StringField('Salt', validators=[DataRequired()])
     remainder_number = \
