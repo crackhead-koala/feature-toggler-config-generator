@@ -78,17 +78,13 @@ class ConfigForm(FlaskForm):
     )
 
     # groups config fields
-    group_name = FieldList(
-        StringField(''),
-        validators=[DataRequired()],
-        min_entries=1
-    )
-    greater_than_or_equal_to_percent = FieldList(
-        IntegerField(''),
-        validators=[DataRequired()],
-        min_entries=1
-    )
-    less_than_or_equal_to_percent = FieldList(
-        IntegerField(''),
-        validators=[DataRequired()]
-    )
+    group_name_1 = \
+        StringField('Name', validators=[DataRequired()])
+    greater_than_or_equal_to_percent_1 = \
+        IntegerField('from', validators=[DataRequired()])
+    less_than_or_equal_to_percent_1 = \
+        IntegerField('to', validators=[DataRequired()])
+
+    group_name_2 = StringField('Name')
+    greater_than_or_equal_to_percent_2 = IntegerField('from')
+    less_than_or_equal_to_percent_2 = IntegerField('to')

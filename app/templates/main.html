@@ -327,7 +327,7 @@
             <div class="form-check form-switch">
 
               {{ form.use_uid.label(class="form-check-label") }}
-              {{ form.use_uid(class="form-check-input") }}
+              {{ form.use_uid(class="form-check-input", checked=True) }}
 
             </div>
           </div>
@@ -356,40 +356,34 @@
         <h2 class="mb-3">Group Options</h2>
 
         <div class="row mb-3">
-          <label class="col-4 col-form-label" for="add-groups-wrapper">Add groups</label>
-
+          <label class="col-4 col-form-label" for="add-groups-wrapper">Configure groups</label>
           <div class="col-8" id="add-groups-wrapper">
-            <div class="input-group mb-3 experiment-group" id="group-0">
+            <div class="input-group mb-3">
 
-              <span class="input-group-text">Name</span>
-              <input class="form-control" type="text">
+              {{ form.group_name_1.label(class="input-group-text") }}
+              {{ form.group_name_1(class="form-control", value="old") }}
 
-              <span class="input-group-text">From</span>
-              <input class="form-control" type="text">
+              {{ form.greater_than_or_equal_to_percent_1.label(class="input-group-text") }}
+              {{ form.greater_than_or_equal_to_percent_1(class="form-control", value="0") }}
 
-              <span class="input-group-text">To</span>
-              <input class="form-control" type="text">
-
-              <button class="btn btn-danger delete-group-btn" id="delete-group-0-btn" disabled>⨉</button>
+              {{ form.less_than_or_equal_to_percent_1.label(class="input-group-text") }}
+              {{ form.less_than_or_equal_to_percent_1(class="form-control", value="49") }}
 
             </div>
 
-            <div class="input-group mb-3 experiment-group" id="group-1">
-              <span class="input-group-text">Name</span>
-              <input class="form-control" type="text">
+            <div class="input-group mb-3">
 
-              <span class="input-group-text">From</span>
-              <input class="form-control" type="text">
+              {{ form.group_name_2.label(class="input-group-text") }}
+              {{ form.group_name_2(class="form-control", value="new") }}
 
-              <span class="input-group-text">To</span>
-              <input class="form-control" type="text">
+              {{ form.greater_than_or_equal_to_percent_2.label(class="input-group-text") }}
+              {{ form.greater_than_or_equal_to_percent_2(class="form-control", value="50") }}
 
-              <button class="btn btn-danger delete-group-btn" id="delete-group-1-btn">⨉</button>
+              {{ form.less_than_or_equal_to_percent_2.label(class="input-group-text") }}
+              {{ form.less_than_or_equal_to_percent_2(class="form-control", value="99") }}
+
             </div>
-
-            <button class="btn btn-outline-secondary" type="button" id="add-group-btn">Add</button>
           </div>
-
         </div>
 
         <hr>
