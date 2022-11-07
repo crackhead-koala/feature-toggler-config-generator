@@ -4,7 +4,8 @@ from wtforms import (
     TextAreaField,
     BooleanField,
     SelectField,
-    IntegerField
+    IntegerField,
+    FieldList
 )
 from wtforms.validators import DataRequired, NumberRange
 
@@ -71,11 +72,23 @@ class ConfigForm(FlaskForm):
     )
     use_uid = BooleanField('Use uid')
     salt = StringField('Salt', validators=[DataRequired()])
-    remainder_number = \
-        IntegerField('Remainder number', validators=[NumberRange(min=2)])
+    remainder_number = IntegerField(
+        'Remainder number',
+        validators=[DataRequired(), NumberRange(min=2)]
+    )
 
     # groups config fields
-    greater_than_or_equal_to_percent = IntegerField()
-    less_than_or_equal_to_percent = IntegerField()
-    starting_from_user_id = IntegerField()
-    ending_by_user_id = IntegerField()
+    group_name = FieldList(
+        StringField(''),
+        validators=[DataRequired()],
+        min_entries=1
+    )
+    greater_than_or_equal_to_percent = FieldList(
+        IntegerField(''),
+        validators=[DataRequired()],
+        min_entries=1
+    )
+    less_than_or_equal_to_percent = FieldList(
+        IntegerField(''),
+        validators=[DataRequired()]
+    )

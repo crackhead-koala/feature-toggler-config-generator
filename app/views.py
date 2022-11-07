@@ -8,7 +8,10 @@ views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
 def main() -> str:
-    form = ConfigForm()
+    class GrpupsSubform(ConfigForm):
+        pass
+
+    form = GrpupsSubform()
     return render_template('main.html', form=form)
 
 

@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/main.css">
+
     <title>Feature Toggler Config Editor</title>
   </head>
   <!-- <body class="bg-light mt-5"> -->
@@ -352,15 +355,41 @@
 
         <h2 class="mb-3">Group Options</h2>
 
-        <div class="row">
-          <label class="col-4 col-form-label" for="add-groups">Add groups</label>
+        <div class="row mb-3">
+          <label class="col-4 col-form-label" for="add-groups-wrapper">Add groups</label>
 
-          <div class="col-5" id="add-groups">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Group name...">
-              <button class="btn btn-outline-secondary" type="button">Add</button>
+          <div class="col-8" id="add-groups-wrapper">
+            <div class="input-group mb-3 experiment-group" id="group-0">
+
+              <span class="input-group-text">Name</span>
+              <input class="form-control" type="text">
+
+              <span class="input-group-text">From</span>
+              <input class="form-control" type="text">
+
+              <span class="input-group-text">To</span>
+              <input class="form-control" type="text">
+
+              <button class="btn btn-danger delete-group-btn" id="delete-group-0-btn" disabled>⨉</button>
+
             </div>
+
+            <div class="input-group mb-3 experiment-group" id="group-1">
+              <span class="input-group-text">Name</span>
+              <input class="form-control" type="text">
+
+              <span class="input-group-text">From</span>
+              <input class="form-control" type="text">
+
+              <span class="input-group-text">To</span>
+              <input class="form-control" type="text">
+
+              <button class="btn btn-danger delete-group-btn" id="delete-group-1-btn">⨉</button>
+            </div>
+
+            <button class="btn btn-outline-secondary" type="button" id="add-group-btn">Add</button>
           </div>
+
         </div>
 
         <hr>
