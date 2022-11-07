@@ -61,155 +61,155 @@ excludedLocalesWrapper.hide();
 
 // Add event listeners
 alwaysActiveForIDsCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (alwaysActiveForIDsCheckbox.is(':checked')) {
         alwaysActiveForIDsWrapper.removeClass('d-none');
         alwaysActiveForIDsWrapper.show(200);
     } else {
         alwaysActiveForIDsWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            alwaysActiveForIDsWrapper.addClass('d-none');
         });
     }
 });
 
 firstInstallVersionCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (firstInstallVersionCheckbox.is(':checked')) {
         firstInstallVersionWrapper.removeClass('d-none');
         firstInstallVersionWrapper.show(200);
     } else {
         firstInstallVersionWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            firstInstallVersionWrapper.addClass('d-none');
         });
     }
 });
 
 minimalAppVersionCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (minimalAppVersionCheckbox.is(':checked')) {
         minimalAppVersionWrapper.removeClass('d-none');
         minimalAppVersionWrapper.show(200);
     } else {
         minimalAppVersionWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            minimalAppVersionWrapper.addClass('d-none');
         });
     }
 });
 
 regionCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (regionCheckbox.is(':checked')) {
         regionWrapper.removeClass('d-none');
         regionWrapper.show(200);
     } else {
         regionWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            regionWrapper.addClass('d-none');
         });
     }
 });
 
 storeCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (storeCheckbox.is(':checked')) {
         storeWrapper.removeClass('d-none');
         storeWrapper.show(200);
     } else {
         storeWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            storeWrapper.addClass('d-none');
         });
     }
 });
 
 priceGroupsCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (priceGroupsCheckbox.is(':checked')) {
         priceGroupsWrapper.removeClass('d-none');
         priceGroupsWrapper.show(200);
     } else {
         priceGroupsWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            priceGroupsWrapper.addClass('d-none');
         });
     }
 });
 
 purchasesStatusCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (purchasesStatusCheckbox.is(':checked')) {
         purchasesStatusWrapper.removeClass('d-none');
         purchasesStatusWrapper.show(200);
     } else {
         purchasesStatusWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            purchasesStatusWrapper.addClass('d-none');
         });
     }
 });
 
 licenseStatusCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (licenseStatusCheckbox.is(':checked')) {
         licenseStatusWrapper.removeClass('d-none');
         licenseStatusWrapper.show(200);
     } else {
         licenseStatusWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            licenseStatusWrapper.addClass('d-none');
         });
     }
 });
 
 ipcCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (ipcCheckbox.is(':checked')) {
         ipcWrapper.removeClass('d-none');
         ipcWrapper.show(200);
     } else {
         ipcWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            ipcWrapper.addClass('d-none');
         });
     }
 });
 
 excludedIpcCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (excludedIpcCheckbox.is(':checked')) {
         excludedIpcWrapper.removeClass('d-none');
         excludedIpcWrapper.show(200);
     } else {
         excludedIpcWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            excludedIpcWrapper.addClass('d-none');
         });
     }
 });
 
 mccCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (mccCheckbox.is(':checked')) {
         mccWrapper.removeClass('d-none');
         mccWrapper.show(200);
     } else {
         mccWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            mccWrapper.addClass('d-none');
         });
     }
 });
 
 excludedMccCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (excludedMccCheckbox.is(':checked')) {
         excludedMccWrapper.removeClass('d-none');
         excludedMccWrapper.show(200);
     } else {
         excludedMccWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            excludedMccWrapper.addClass('d-none');
         });
     }
 });
 
 localesCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (localesCheckbox.is(':checked')) {
         localesWrapper.removeClass('d-none');
         localesWrapper.show(200);
     } else {
         localesWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            localesWrapper.addClass('d-none');
         });
     }
 });
 
 excludedLocalesCheckbox.on('click', () => {
-    if ($(this).is(':checked')) {
+    if (excludedLocalesCheckbox.is(':checked')) {
         excludedLocalesWrapper.removeClass('d-none');
         excludedLocalesWrapper.show(200);
     } else {
         excludedLocalesWrapper.hide(200, () => {
-            $(this).addClass('d-none');
+            excludedLocalesWrapper.addClass('d-none');
         });
     }
 });
@@ -237,7 +237,6 @@ function newGroupId(groups) {
     let maxId = 0;
     for (let group of groups) {
         let id = +group.id.split('-')[1];
-        console.log(id, maxId);
         if (id > maxId) {
             maxId = id;
         }
