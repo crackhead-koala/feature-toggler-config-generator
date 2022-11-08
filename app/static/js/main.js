@@ -213,3 +213,7 @@ excludedLocalesCheckbox.on('click', () => {
         });
     }
 });
+
+
+// Copy to clipboard button
+$('#')
