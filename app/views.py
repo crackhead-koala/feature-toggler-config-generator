@@ -1,7 +1,7 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 
 from .forms import ConfigForm
-from .functions import parse_form_into_json
+from .functions import json_serialieze_from_data
 
 
 views = Blueprint('views', __name__)
@@ -10,18 +10,18 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 def form() -> str:
     form = ConfigForm()
-
-    if form.validate_on_submit():
-        # form_json = parse_form_into_json(form)
-        # return render_template('config.html', form_json=form_json)
-        return render_template('config.html')
-
     return render_template('form.html', form=form)
 
 
-@views.route('/config')
+@views.route('/config', methods=['GET', 'POST'])
 def config() -> str:
-    return render_template('config.html')
+    if request.method == 'POST':
+        form = request.form
+        print(form)
+        return render_template(
+            'config.html',
+            config_json=json_serialieze_from_data(form)
+        )
 
 
 @views.route('/tmp', methods=['GET', 'POST'])

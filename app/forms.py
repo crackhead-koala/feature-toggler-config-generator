@@ -4,8 +4,7 @@ from wtforms import (
     TextAreaField,
     BooleanField,
     SelectField,
-    IntegerField,
-    FieldList
+    IntegerField
 )
 from wtforms.validators import DataRequired, NumberRange
 
@@ -64,7 +63,7 @@ class ConfigForm(FlaskForm):
     use_excluded_locales = BooleanField('Exclude locales')
     excluded_locales = TextAreaField()
 
-    # distribution config fields
+    # division config fields
     hash_type = SelectField(
         'Hash type',
         choices=[('crc32', 'CRC-32')],

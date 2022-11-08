@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 {% block content %}
 
-  <form method="POST" action="">
+  <form method="POST" action="{{ url_for('views.config') }}">
     {{ form.hidden_tag() }}
 
     <div class="container">

@@ -1,20 +1,6 @@
 {% extends "main.html" %}
 {% block content %}
   <div class="pl-5 pr-5">
-    <pre><code class="language-json">
-{
-  "name": "John",
-  "surname": "Doe",
-  "age": 24,
-  "pets": {
-    "cat": {
-      "name": "Snowball"
-    },
-    "dog": {
-      "name": "Butch"
-    }
-  }
-}
-    </code></pre>
+    <pre><code class="language-json">{{ config_json }}</code></pre>
   </div>
 {% endblock %}
