@@ -2,7 +2,7 @@ import json
 from werkzeug.datastructures import ImmutableMultiDict
 
 
-def json_serialieze_from_data(form: ImmutableMultiDict) -> str:
+def json_serialieze_form_data(form: ImmutableMultiDict) -> str:
     feature_name = form['feature_name']
 
     # create dict with required options
@@ -104,15 +104,15 @@ def json_serialieze_from_data(form: ImmutableMultiDict) -> str:
     # parse group config
     config_dict[feature_name]['ruleOptions']['groups'] = {
         form['group_name_1']: {
-            'greater_than_or_equal_to_percent_1':
+            'greater_than_or_equal_to_percent':
                 int(form['greater_than_or_equal_to_percent_1']),
-            'less_than_or_equal_to_percent_1':
+            'less_than_or_equal_to_percent':
                 int(form['less_than_or_equal_to_percent_1'])
         },
         form['group_name_2']: {
-            'greater_than_or_equal_to_percent_2':
+            'greater_than_or_equal_to_percent':
                 int(form['greater_than_or_equal_to_percent_2']),
-            'less_than_or_equal_to_percent_2':
+            'less_than_or_equal_to_percent':
                 int(form['less_than_or_equal_to_percent_2'])
         }
     }

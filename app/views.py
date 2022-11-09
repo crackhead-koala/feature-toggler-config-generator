@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
 
 from .forms import ConfigForm
-from .functions import json_serialieze_from_data
+from .functions import json_serialieze_form_data
 
 
 views = Blueprint('views', __name__)
@@ -20,7 +20,7 @@ def config() -> str:
         print(form)
         return render_template(
             'config.html',
-            config_json=json_serialieze_from_data(form)
+            config_json=json_serialieze_form_data(form)
         )
 
 
