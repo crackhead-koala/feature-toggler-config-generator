@@ -1,7 +1,7 @@
 {% extends "main.html" %}
-{% block content %}
+{% block form %}
 
-  <form method="POST" action="{{ url_for('views.config') }}">
+  <form>
     {{ form.hidden_tag() }}
 
     <div class="container">
@@ -371,8 +371,9 @@
 
       <hr>
 
-      <button class="btn btn-outline-primary" type="submit">Submit</button>
+      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#config-modal" id="submit-form">Create config</button>
     </div>
   </form>
+  </div>
 
 {% endblock %}

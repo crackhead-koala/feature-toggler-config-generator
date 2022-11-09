@@ -21,8 +21,24 @@
 
     <h1 class="mb-5">Create Feature Toggler Config</h1>
 
-    {% block content %}
+    {% block form %}
     {% endblock %}
+
+    <div class="modal fade" id="config-modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <pre class="rounded-3 shadow"><code class="language-json" id="config-json"></code></pre>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-primary" id="copy-config-json">Copy to clipboard</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery and Bootstrap JS -->
     <script src="../static/js/jquery-3.6.1.min.js"></script>

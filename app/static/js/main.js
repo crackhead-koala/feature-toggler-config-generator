@@ -215,5 +215,43 @@ excludedLocalesCheckbox.on('click', () => {
 });
 
 
+// Send form data to backend
+function serializeFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}
+
+$('#submit-form').on('click', (event) => {
+    event.preventDefault();
+
+    $.ajax({
+        data : serializeFormData($('form')),
+        type : 'POST',
+        url : '/create_config'
+    }).done((data) => {
+        $('#config-json').text(data);
+    }).done(() => {
+        hljs.highlightElement($('#config-json').get(0));
+    });
+
+});
+
+
 // Copy to clipboard button
-$('#')
+async function copyContent(element) {
+    try {
+        await navigator.clipboard.writeText(element.text());
+    } catch (err) {
+        console.error('Failed to copy: ', err);
+    }
+}
+
+$('#copy-config-json').on('click', () => {
+    copyContent($('#config-json'));
+});
