@@ -20,40 +20,45 @@ def json_serialieze_form_data(form: ImmutableMultiDict) -> str:
 
 
     # parse optional rules
-    if 'use_always_enabled_for_ids' in form:
+    if 'use_always_enabled_for_ids' in form \
+        and form.get('always_enabled_for_ids'):
+
         config_dict[feature_name]['ruleOptions']['always_enabled_for_ids'] = [
             int(user_id.strip())
             for user_id
             in form['always_enabled_for_ids'].split(',')
         ]
 
-    if 'use_first_install' in form:
+    if 'use_first_install' in form and form.get('first_install'):
         config_dict[feature_name]['ruleOptions']['first_install'] = \
             form['first_install']
 
-    if 'use_minimal_app_version' in form:
+    if 'use_minimal_app_version' in form and form.get('minimal_app_version'):
         config_dict[feature_name]['ruleOptions']['minimal_app_version'] = \
             int(form['minimal_app_version'])
 
-    if 'use_region' in form:
+    if 'use_region' in form and form.get('region'):
         config_dict[feature_name]['ruleOptions']['region'] = form['region']
 
-    if 'use_store' in form:
+    if 'use_store' in form and \
+        ((included_stores := form.get('included_stores')) or
+         (excluded_stores := form.get('excluded_stores'))):
+
         stores = {}
 
-        if (included_stores := form.get('included_stores')):
+        if included_stores:
             stores.update(
                 {pi.strip(): True for pi in included_stores.split(',')}
             )
 
-        if (excluded_stores := form.get('excluded_stores')):
+        if excluded_stores:
             stores.update(
                 {pi.strip(): False for pi in excluded_stores.split(',')}
             )
 
         config_dict[feature_name]['ruleOptions']['store'] = stores
 
-    if 'use_price_groups' in form:
+    if 'use_price_groups' in form and form.get('price_groups'):
         config_dict[feature_name]['ruleOptions']['price_groups'] = \
             {int(pg.strip()): True for pg in form['price_groups'].split(',')}
 
@@ -67,27 +72,27 @@ def json_serialieze_form_data(form: ImmutableMultiDict) -> str:
         config_dict[feature_name]['ruleOptions']['license_accept'] = \
             bool(form.get('license_status'))
 
-    if 'use_ipc' in form:
+    if 'use_ipc' in form and form.get('ipc'):
         config_dict[feature_name]['ruleOptions']['ipc'] = \
             {ipc.strip(): True for ipc in form['ipc'].split(',')}
 
-    if 'use_excluded_ipc' in form:
+    if 'use_excluded_ipc' in form and form.get('excluded_ipc'):
         config_dict[feature_name]['ruleOptions']['excluded_ipc'] = \
             {ipc.strip(): True for ipc in form['excluded_ipc'].split(',')}
 
-    if 'use_mcc' in form:
+    if 'use_mcc' in form and form.get('mcc'):
         config_dict[feature_name]['ruleOptions']['mcc'] = \
             {int(mcc.strip()): True for mcc in form['mcc'].split(',')}
 
-    if 'use_excluded_mcc' in form:
+    if 'use_excluded_mcc' in form and form.get('excluded_mcc'):
         config_dict[feature_name]['ruleOptions']['excluded_mcc'] = \
-            {int(mcc.strip()): True for mcc in form['excluded_mcc'].split(',')}
+            {int(mcc.strip()): True for mcc in form[''].split(',')}
 
-    if 'use_locales' in form:
+    if 'use_locales' in form and form.get('locales'):
         config_dict[feature_name]['ruleOptions']['locales'] = \
             {al.strip(): True for al in form['locales'].split(',')}
 
-    if 'use_excluded_locales' in form:
+    if 'use_excluded_locales' in form and form.get('excluded_locales'):
         config_dict[feature_name]['ruleOptions']['excluded_locales'] = \
             {al.strip(): True for al in form['excluded_locales'].split(',')}
 

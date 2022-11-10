@@ -14,7 +14,7 @@
 
         <div class="col-8">
 
-          {{ form.feature_name(class="form-control") }}
+          {{ form.feature_name(class="form-control", placeholder="e.g. android.experiment.GMD_29544_banner_text_feature_toggler") }}
 
         </div>
       </div>
@@ -43,7 +43,7 @@
 
         <div class="col-8">
 
-          {{ form.distribution_event(class="form-control") }}
+          {{ form.distribution_event(class="form-control", placeholder="e.g. growth_gmd_29544_banner_text_feature_toggler_experiment") }}
 
         </div>
       </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="d-none col-5" id="always_enabled_for_ids_wrapper" >
 
-          {{ form.always_enabled_for_ids(class="form-control", rows="2", placeholder="Enter IDs here...") }}
+          {{ form.always_enabled_for_ids(class="form-control", rows="2", placeholder="e.g. 78832592, 75965596, ...") }}
 
         </div>
       </div>
@@ -75,7 +75,7 @@
         </div>
         <div class="d-none col-5" id="first_install_wrapper">
 
-          {{ form.first_install(class="form-control") }}
+          {{ form.first_install(class="form-control", placeholder="e.g. 2.5.48") }}
 
         </div>
       </div>
@@ -91,7 +91,7 @@
         </div>
         <div class="d-none col-5" id="minimal_app_version_wrapper">
 
-          {{ form.minimal_app_version(class="form-control") }}
+          {{ form.minimal_app_version(class="form-control", placeholder="e.g. 2005487") }}
 
         </div>
       </div>
@@ -124,11 +124,11 @@
         <div class="d-none col-5" id="store_wrapper">
           <p>Include:</p>
 
-          {{ form.included_stores(class="form-control mb-3", rows="2", placeholder="Enter store package IDs to include...") }}
+          {{ form.included_stores(class="form-control mb-3", rows="2", placeholder="e.g. com.android.vending, com.huawei.appmarket, ...") }}
 
           <p>Exclude:</p>
 
-          {{ form.excluded_stores(class="form-control mb-3", rows="2", placeholder="Enter store package IDs to exclude...") }}
+          {{ form.excluded_stores(class="form-control mb-3", rows="2", placeholder="e.g. com.android.vending, com.huawei.appmarket, ...") }}
 
         </div>
       </div>
@@ -144,7 +144,7 @@
         </div>
         <div class="d-none col-5" id="price_groups_wrapper">
 
-          {{ form.price_groups(class="form-control", rows="2", placeholder="Enter price groups here...") }}
+          {{ form.price_groups(class="form-control", rows="2", placeholder="e.g. 2, 3, ...") }}
 
         </div>
       </div>
@@ -204,7 +204,7 @@
         </div>
         <div class="d-none col-5" id="ipc_wrapper">
 
-          {{ form.ipc(class="form-control", rows="2", placeholder="Enter IPs to include...") }}
+          {{ form.ipc(class="form-control", rows="2", placeholder="e.g. US, GB, TR, ...") }}
 
         </div>
       </div>
@@ -220,7 +220,7 @@
         </div>
         <div class="d-none col-5" id="excluded_ipc_wrapper">
 
-          {{ form.excluded_ipc(class="form-control", rows="2", placeholder="Enter IPCs to exclude...") }}
+          {{ form.excluded_ipc(class="form-control", rows="2", placeholder="e.g. US, GB, TR, ...") }}
 
         </div>
       </div>
@@ -236,7 +236,7 @@
         </div>
         <div class="d-none col-5" id="mcc_wrapper">
 
-          {{ form.mcc(class="form-control", rows="2", placeholder="Enter MCCs to include...") }}
+          {{ form.mcc(class="form-control", rows="2", placeholder="e.g. 250, 404, ...") }}
 
         </div>
       </div>
@@ -252,7 +252,7 @@
         </div>
         <div class="d-none col-5" id="excluded_mcc_wrapper">
 
-          {{ form.excluded_mcc(class="form-control", rows="2", placeholder="Enter MCCs to exclude...") }}
+          {{ form.excluded_mcc(class="form-control", rows="2", placeholder="e.g. 250, 404, ...") }}
 
         </div>
       </div>
@@ -268,7 +268,7 @@
         </div>
         <div class="d-none col-5" id="locales_wrapper">
 
-          {{ form.locales(class="form-control", rows="2", placeholder="Enter locales to include...") }}
+          {{ form.locales(class="form-control", rows="2", placeholder="e.g. ru, tr, en-US, ...") }}
 
         </div>
       </div>
@@ -284,7 +284,7 @@
         </div>
         <div class="d-none col-5" id="excluded_locales_wrapper">
 
-          {{ form.excluded_locales(class="form-control", rows="2", placeholder="Enter locales to exclude...") }}
+          {{ form.excluded_locales(class="form-control", rows="2", placeholder="e.g. ru, tr, en-US, ...") }}
 
         </div>
       </div>
@@ -320,7 +320,7 @@
         <label class="col-4 col-form-label" for="salt-label">Salt</label>
         <div class="col-5" id="salt-label">
 
-          {{ form.salt(class="form-control") }}
+          {{ form.salt(class="form-control", placeholder="e.g. growth_arpu_experiments") }}
 
         </div>
       </div>
