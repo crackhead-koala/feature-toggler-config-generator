@@ -10,9 +10,8 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 def form() -> str:
     form = ConfigForm()
-    # if form.validate_on_submit():
-    #     config_json = json_serialieze_form_data(form)
-    #     return render_template('form.html', form=form, config_json=config_json)
+    if form.validate_on_submit():
+        pass
     return render_template('form.html', form=form)
 
 

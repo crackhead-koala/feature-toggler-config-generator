@@ -18,7 +18,6 @@ def json_serialieze_form_data(form: ImmutableMultiDict) -> str:
         }
     }
 
-
     # parse optional rules
     if 'use_always_enabled_for_ids' in form \
         and form.get('always_enabled_for_ids'):
@@ -62,15 +61,14 @@ def json_serialieze_form_data(form: ImmutableMultiDict) -> str:
         config_dict[feature_name]['ruleOptions']['price_groups'] = \
             {int(pg.strip()): True for pg in form['price_groups'].split(',')}
 
-    if 'use_purchases_status' in form:
-        config_dict[feature_name]['ruleOptions']['active_subscription'] = \
-            bool(form.get('active_subscription'))
-        config_dict[feature_name]['ruleOptions']['active_minutes'] = \
-            bool(form.get('active_minutes'))
+    if 'use_purchases_status' in form and form.get('active_subscription'):
+        config_dict[feature_name]['ruleOptions']['active_subscription'] = True
 
-    if 'use_license_status' in form:
-        config_dict[feature_name]['ruleOptions']['license_accept'] = \
-            bool(form.get('license_status'))
+    if 'use_purchases_status' in form and form.get('active_minutes'):
+        config_dict[feature_name]['ruleOptions']['active_minutes'] = True
+
+    if 'use_license_status' in form and form.get('license_accept'):
+        config_dict[feature_name]['ruleOptions']['license_accept'] = True
 
     if 'use_ipc' in form and form.get('ipc'):
         config_dict[feature_name]['ruleOptions']['ipc'] = \
@@ -96,7 +94,6 @@ def json_serialieze_form_data(form: ImmutableMultiDict) -> str:
         config_dict[feature_name]['ruleOptions']['excluded_locales'] = \
             {al.strip(): True for al in form['excluded_locales'].split(',')}
 
-
     # parse division config
     config_dict[feature_name]['ruleOptions']['division_config'] = {
         'hash_type': form['hash_type'],
@@ -104,7 +101,6 @@ def json_serialieze_form_data(form: ImmutableMultiDict) -> str:
         'salt': form['salt'],
         'remainder_number': int(form['remainder_number'])
     }
-
 
     # parse group config
     config_dict[feature_name]['ruleOptions']['groups'] = {
