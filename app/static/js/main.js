@@ -244,14 +244,24 @@ $('#submit-form').on('click', (event) => {
 
 
 // Copy to clipboard button
+let copyTooltip = new bootstrap.Tooltip($('#copy-config-json'), {
+    title: 'Copied',
+    placement : 'top',
+    trigger : 'manual'
+});
+
 async function copyContent(element) {
     try {
         await navigator.clipboard.writeText(element.text());
     } catch (err) {
-        console.error('Failed to copy: ', err);
+        alert('Failed to copy: ', err);
     }
 }
 
 $('#copy-config-json').on('click', () => {
     copyContent($('#config-json'));
+    copyTooltip.show();
+    setTimeout(() => {
+        $('#copy-config-json').tooltip('hide');
+    }, 1000);
 });
