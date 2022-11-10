@@ -20,8 +20,3 @@ def form() -> str:
 def create_config() -> str:
     if request.method == 'POST':
         return json_serialieze_form_data(request.form)
-
-
-@views.route('/tmp', methods=['GET', 'POST'])
-def tmp() -> str:
-    return render_template('tmp.html')
