@@ -94,7 +94,7 @@ $ pip install -r ./requirements.txt
 Для распределения пользователей по группам используется формула:
 
 $$
-\text{division} := \text{CRC32(\text{uid} + \text{salt})} \mod m
+\text{division} := \text{CRC32}(\text{uid} + \text{salt}) \mod m
 $$
 
 где:
