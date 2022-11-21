@@ -40,17 +40,16 @@ def json_serialieze_form_data(form: ImmutableMultiDict) -> str:
         config_dict[feature_name]['ruleOptions']['region'] = form['region']
 
     if 'use_store' in form and \
-        ((included_stores := form.get('included_stores')) or
-         (excluded_stores := form.get('excluded_stores'))):
+        (form.get('included_stores') or form.get('excluded_stores')):
 
         stores = {}
 
-        if included_stores:
+        if (included_stores := form.get('included_stores')):
             stores.update(
                 {pi.strip(): True for pi in included_stores.split(',')}
             )
 
-        if excluded_stores:
+        if (excluded_stores := form.get('excluded_stores')):
             stores.update(
                 {pi.strip(): False for pi in excluded_stores.split(',')}
             )
